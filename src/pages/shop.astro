@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/default.astro';
+import ShopItems from '../components/ShopItems.astro';
 ---
 
 <Layout>
@@ -12,5 +13,25 @@ import Layout from '../layouts/default.astro';
 				phone, call <a href="tel:0000000000">000-000-0000</a>
 			</p>
 		</noscript>
+
+		<div class="products">
+			<ShopItems />
+
+			<p>TODO: show cart</p>
+		</div>
 	</div>
 </Layout>
+
+<style>
+	.shop {
+		padding: 3rem 5%;
+	}
+
+	.products {
+		align-items: flex-start;
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: 1fr 260px;
+		position: relative;
+	}
+</style>
