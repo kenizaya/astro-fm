@@ -12,3 +12,8 @@ export function addItemToCart(item: ShopItem) {
 		quantity: quantity + 1,
 	});
 }
+
+export function removeItemFromCart(itemId: number) {
+	// @ts-ignore
+	$cart.setKey(itemId, undefined);
+}
