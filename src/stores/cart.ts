@@ -17,3 +17,15 @@ export function removeItemFromCart(itemId: number) {
 	// @ts-ignore
 	$cart.setKey(itemId, undefined);
 }
+
+export const subtotal = computed($cart, (entries) => {
+	let subtotal = 0;
+
+	Object.values(entries).forEach((item) => {
+		if (!item) return;
+
+		subtotal += item.quantity * item.item.price;
+	});
+
+	return subtotal;
+});
